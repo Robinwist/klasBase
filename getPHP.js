@@ -1,4 +1,4 @@
-function dataRequest(collum, Gid){
+function dataRequest(collumn, Gid){
     this.Gid = Gid || "none";
     this.collumn  = collumn || "none";
     this.request = new XMLHttpRequest();
