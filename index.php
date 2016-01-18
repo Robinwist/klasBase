@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="logic/getPHP.js"></script>
+        <script src="getPHP.js"></script>
     </head>
     <body>
     </body>

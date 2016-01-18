@@ -24,6 +24,8 @@ function dataRequest(collumn, Gid){
 
     this.request.send();
 
+    console.log(this.dataRequestID);
+
     this.requestResponse = this.request.responseText;
 }
 

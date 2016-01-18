@@ -12,6 +12,8 @@ $gid = isset($_GET['Gid']);
 
 $result = $mysqli->query("SELECT * FROM students");
 
-while($data = $result->fetch_assoc()){
-    echo $data['firstname'];
-}
+$data = $result->fetch_assoc();
+    echo json_encode($result);
+
+var_dump($result);
+

@@ -20,16 +20,22 @@ function dataRequest(collumn, Gid){
         this.dataRequestID = "getDB.php?id=" + this.Gid + "&collumn=" + this.collumn;
 
     }
-    request.open("GET",this.dataRequestID,true)
+    this.request.open("GET",this.dataRequestID, true)
 
-    request.send();
+    this.request.addEventListener("load", function(){
+        console.log(this.responseText);
+    });
 
-    this.requestResponse = request.responseText;
+    this.request.send();
+
+    console.log(this.dataRequestID);
+
+    this.requestResponse = this.request.responseText;
 }
 
 
-var getUsers = new dataRequest("COL 1")
+var getUsers = new dataRequest("firstname");
 
-    console.log(getUsers.requestResponse)
+    console.log(getUsers.requestResponse);
 
 
