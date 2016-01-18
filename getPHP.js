@@ -1,4 +1,4 @@
-function dataRequest(collumn, Gid){
+function dataRequest(collumn, Gid, callback){
     this.Gid = Gid || "none";
     this.collumn  = collumn || "none";
     this.request = new XMLHttpRequest();
@@ -23,19 +23,23 @@ function dataRequest(collumn, Gid){
     this.request.open("GET",this.dataRequestID, true)
 
     this.request.addEventListener("load", function(){
-        console.log(this.responseText);
+        if(callback){
+            callback(this.responseText);
+        }
     });
 
     this.request.send();
 
     console.log(this.dataRequestID);
 
-    this.requestResponse = this.request.responseText;
+
 }
 
 
-var getUsers = new dataRequest("firstname");
+var getUsers = new dataRequest("firstname","" ,function(args){
+    console.log(args)
 
+});
     console.log(getUsers.requestResponse);
 
 
