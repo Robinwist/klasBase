@@ -7,12 +7,11 @@ if ($mysqli->connect_errno) {
     (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-$column = isset($_GET['collumn']);
+$column = $_GET['collumn'];
 $gid = isset($_GET['Gid']);
 
-$result = $mysqli->query("SELECT * FROM $column, $gid ");
+$result = $mysqli->query("SELECT * FROM students");
 
 while($data = $result->fetch_assoc()){
-    echo $data['collumn'];
-    echo $gid['Gid'];
+    echo $data['firstname'];
 }
