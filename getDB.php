@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli('localhost', 'duckofdoom','koekje1' , 'duckofdoom_kal');
+$mysqli = new mysqli('localhost', 'duckofdoom','koekje' , 'duckofdoom_kal');
 
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL:
